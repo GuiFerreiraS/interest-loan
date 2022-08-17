@@ -1,0 +1,11 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "database": "prisma/dev.db",
+      "name": "Loan"
+    }
+  ],
+  "sqltools.useNodeRuntime": true
+}
