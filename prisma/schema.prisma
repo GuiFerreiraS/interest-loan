@@ -22,8 +22,9 @@ model Loan {
 }
 
 model Payment {
-  id     String  @id @default(uuid())
-  loan   Loan    @relation(fields: [loanId], references: [id])
-  value  Decimal
-  loanId String
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  loan      Loan     @relation(fields: [loanId], references: [id], onDelete: Cascade)
+  value     Decimal
+  loanId    String
 }

@@ -1,4 +1,6 @@
-export const toBRL = (value: number | string) => {
+export const toBRL = (value?: number | string) => {
+  if (!value) value = 0;
+
   value = +value;
 
   return value.toLocaleString("pt-BR", {

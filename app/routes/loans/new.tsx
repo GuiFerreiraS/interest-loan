@@ -27,6 +27,7 @@ export const action = async ({ request }: ActionArgs) => {
     borrowedAmount: +form.get("borrowedAmount")!.toString(),
     combinedInstallmentValue: +form.get("combinedInstallmentValue")!.toString(),
     monthlyInterest: +form.get("monthlyInterest")!.toString(),
+    createdAt: new Date(form.get("createdAt")!.toString()),
   };
 
   const response = await db.loan.create({ data: newLoan });
@@ -96,6 +97,16 @@ export default function NewJokeRoute() {
               </NumberInput>
             </FormControl>
           </Flex>
+
+          <FormControl flex={1}>
+            <FormLabel>Data</FormLabel>
+            <Input
+              borderColor="blackAlpha.800"
+              _hover={{ borderColor: "blackAlpha.700" }}
+              name="createdAt"
+              type="date"
+            />
+          </FormControl>
           <Button
             w="100%"
             type="submit"

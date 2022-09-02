@@ -42,7 +42,7 @@ export default function Loans() {
           ))}
         </VStack>
       </GridItem>
-      <GridItem p={8} rowSpan={23} colSpan={9}>
+      <GridItem overflow="auto" p={8} rowSpan={23} colSpan={9}>
         <Outlet />
       </GridItem>
       <GridItem colSpan={9}>
